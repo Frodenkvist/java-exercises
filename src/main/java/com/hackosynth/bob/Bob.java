@@ -1,6 +1,6 @@
 package com.hackosynth.bob;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.util.regex.Pattern;
 
 public class Bob {
     /**
@@ -9,6 +9,16 @@ public class Bob {
      * @return bob's response to the spoken sentence
      */
     public static String hey(String input) {
-        throw new NotImplementedException();
+        String trimmedInput = input.trim();
+
+        boolean silence = trimmedInput.isEmpty();
+        boolean asking = trimmedInput.endsWith("?");
+        boolean shouting = Pattern.compile("\\p{Upper}").matcher(trimmedInput).find() && !Pattern.compile("\\p{Lower}").matcher(trimmedInput).find();
+
+        if(silence) return "Fine. Be that way!";
+        if(shouting && asking) return "Calm down, I know what I'm doing!";
+        if(shouting) return "Whoa, chill out!";
+        if(asking) return "Sure.";
+        else return "Whatever.";
     }
 }

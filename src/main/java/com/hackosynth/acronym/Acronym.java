@@ -1,6 +1,7 @@
 package com.hackosynth.acronym;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class Acronym {
     /**
@@ -8,6 +9,16 @@ public class Acronym {
      * @return the acronym for the sentence
      */
     public static String generate(String phrase) {
-        throw new NotImplementedException();
+        return Arrays.stream(phrase.split("([ \\-])"))
+                .map(word -> {
+                    for(char c : word.toCharArray())
+                    {
+                        if(Character.isLetterOrDigit(c)) {
+                            return String.valueOf(c);
+                        }
+                    }
+
+                    return "";
+                }).collect(Collectors.joining()).toUpperCase();
     }
 }
