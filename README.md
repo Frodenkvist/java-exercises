@@ -7,3 +7,7 @@
 - [Space Age (Easy) - Math, Conditionals](src/main/java/com/hackosynth/spaceage)
 - [Matrix (Medium) - Strings, Pattern Matching](src/main/java/com/hackosynth/matrix)
 - [Cipher (Hard) - Cryptography, Strings, Security](src/main/java/com/hackosynth/cipher)
+- [Natural Number (Easy) - Integers, Math](src/main/java/com/hackosynth/naturalnumber)
+- [Isogram (Medium) - Strings, Parsing](src/main/java/com/hackosynth/isogram)
+- [Diamond (Medium) - Arrays, Text formatting](src/main/java/com/hackosynth/diamond)
+- [Forth (Hard) - Integer, Pattern matching](src/main/java/com/hackosynth/forth)
